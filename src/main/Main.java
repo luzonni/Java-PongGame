@@ -3,6 +3,7 @@ package main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 import cene.Map;
 
@@ -17,6 +18,7 @@ public class Main implements Runnable {
 	public static int MaxFrames = 256;
     public static BufferStrategy BufferS;
 
+	public static Random rand;
     public static final String ResPath = "/res";
 
 	private Map map;
@@ -28,6 +30,7 @@ public class Main implements Runnable {
     }
 
     public Main() {
+		rand = new Random();
 		keys = new KeyBoard();
         window = new Window("Pong", 1280, 720);
 		window.addKeyListener(keys);
